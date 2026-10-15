@@ -6,127 +6,137 @@
   <title>ERP System — Professional Business Workspace</title>
   <meta name="description" content="ERP System is a professional desktop business application for invoices, delivery challans, material receipts, reports, and secure backups." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232563eb'/><text x='50' y='62' font-size='36' font-weight='700' fill='white' text-anchor='middle' font-family='system-ui'>ERP</text></svg>" />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">
-        <span class="logo">ERP</span>
-        <span>ERP System</span>
-      </a>
-      <nav>
-        <a href="#features">Features</a>
-        <a href="#security">Security</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a class="btn btn-sm" href="#contact">Contact</a>
-      </nav>
+  <!-- Intro overlay animation -->
+  <div id="intro" class="intro" aria-hidden="true">
+    <div class="intro-glow"></div>
+    <div class="intro-logo-wrap">
+      <img class="intro-logo float-y" src="logo.svg" alt="ERP System" width="120" height="120" />
+      <div class="intro-ring"></div>
     </div>
-  </header>
+    <h1 class="intro-title">ERP System</h1>
+    <p class="intro-sub">Professional business workspace</p>
+    <div class="intro-bar"><span></span></div>
+  </div>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">Desktop ERP for growing businesses</p>
-        <h1>Run invoices, delivery &amp; accounts in one professional workspace</h1>
-        <p class="lead">
-          ERP System helps you manage material receipts, delivery challans, invoices,
-          payments, financial years, and local or cloud backups — built for Windows
-          PCs used in shops, warehouses, and offices.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="#features">Explore features</a>
-          <a class="btn btn-ghost" href="privacy.html">Privacy Policy</a>
+  <div class="page">
+    <div class="bg-orbs" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+    </div>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">
+          <img src="logo.svg" alt="" class="brand-logo" width="40" height="40" />
+          <span>ERP System</span>
+        </a>
+        <nav>
+          <a href="#features">Features</a>
+          <a href="#security">Security</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a class="btn btn-sm" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow"><span class="pulse-dot"></span> Desktop ERP for growing businesses</p>
+          <h1>Run invoices, delivery &amp; accounts in one <span class="gradient-text">professional workspace</span></h1>
+          <p class="lead">
+            Manage material receipts, delivery challans, invoices, payments, financial years,
+            and local or cloud backups — built for Windows PCs in shops, warehouses, and offices.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#features">Explore features</a>
+            <a class="btn btn-ghost" href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal delay-1">
+          <div class="hero-card float-slow">
+            <img src="logo.svg" alt="ERP" class="hero-logo spin-soft" width="88" height="88" />
+            <h3>What you get</h3>
+            <ul>
+              <li>Invoices &amp; payments</li>
+              <li>Delivery challans + driver details</li>
+              <li>Material receipts &amp; reports</li>
+              <li>Pakistan financial year</li>
+              <li>Local + optional Google Drive backup</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="hero-card">
-        <div class="hero-badge">ERP</div>
-        <h3>What you get</h3>
-        <ul>
-          <li>Invoices &amp; invoice payments</li>
-          <li>Delivery challans with driver details</li>
-          <li>Material receipts &amp; reports</li>
-          <li>Pakistan financial year support</li>
-          <li>Local backup + optional Google Drive</li>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Core modules</h2>
+          <p class="section-lead">Everything your team needs for day-to-day operations — clear, fast, focused.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal"><div class="card-icon">📄</div><h3>Sales &amp; documents</h3><p>Invoices, delivery challans, and material receipts with print-ready layouts.</p></article>
+          <article class="card reveal delay-1"><div class="card-icon">💳</div><h3>Payments</h3><p>Track invoice payments and receipts so balances stay accurate all year.</p></article>
+          <article class="card reveal delay-2"><div class="card-icon">👥</div><h3>Masters &amp; parties</h3><p>Parties, items, and company settings in one place for faster entry.</p></article>
+          <article class="card reveal"><div class="card-icon">📊</div><h3>Reports</h3><p>Operational reports when you need a clear snapshot of activity.</p></article>
+          <article class="card reveal delay-1"><div class="card-icon">📅</div><h3>Financial year</h3><p>Aligned with Pakistan’s July–June year so periods match your books.</p></article>
+          <article class="card reveal delay-2"><div class="card-icon">☁️</div><h3>Backup</h3><p>Local backups anytime. Optional Google Drive after you connect.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="security" class="section section-alt">
+      <div class="container narrow reveal">
+        <h2>Security &amp; your data</h2>
+        <p>
+          Data lives primarily on <strong>your computer</strong>. Optional Google Drive backup runs only after you
+          sign in and choose to upload. We do not sell your data.
+        </p>
+        <ul class="checklist">
+          <li>Local-first storage on your device</li>
+          <li>Google OAuth only for backups you start</li>
+          <li>No ads · no sale of customer data</li>
+          <li>Disconnect Google and remove local tokens anytime</li>
         </ul>
+        <p class="links-row">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="features" class="section">
-    <div class="container">
-      <h2>Core modules</h2>
-      <p class="section-lead">Everything your team needs for day-to-day operations, without clutter.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Sales &amp; documents</h3>
-          <p>Create and track invoices, delivery challans, and material receipts with clear print-ready layouts.</p>
-        </article>
-        <article class="card">
-          <h3>Payments</h3>
-          <p>Record invoice payments and general receipts so balances stay accurate across the financial year.</p>
-        </article>
-        <article class="card">
-          <h3>Masters &amp; parties</h3>
-          <p>Maintain parties, items, and company settings in one place for faster document entry.</p>
-        </article>
-        <article class="card">
-          <h3>Reports</h3>
-          <p>Generate operational reports when you need a snapshot of activity and outstanding amounts.</p>
-        </article>
-        <article class="card">
-          <h3>Financial year</h3>
-          <p>Aligned with Pakistan’s July–June financial year so periods match how you already work.</p>
-        </article>
-        <article class="card">
-          <h3>Backup</h3>
-          <p>Save encrypted-ready local backups anytime. Optional Google Drive upload after you connect your account.</p>
-        </article>
+    <section id="contact" class="section">
+      <div class="container narrow reveal">
+        <h2>Contact</h2>
+        <p class="lead-sm">Support, privacy requests, or business enquiries:</p>
+        <a class="contact-pill" href="mailto:kingofdevilkillr1@gmail.com">
+          <span class="mail-ico">✉</span>
+          kingofdevilkillr1@gmail.com
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="security" class="section section-alt">
-    <div class="container narrow">
-      <h2>Security &amp; your data</h2>
-      <p>
-        ERP System stores business data primarily on your computer in a local database you control.
-        Optional Google Drive backup only runs after you explicitly sign in with Google and choose to upload.
-        We do not sell your data. See our
-        <a href="privacy.html">Privacy Policy</a> and
-        <a href="terms.html">Terms of Service</a> for full details.
-      </p>
-      <ul class="checklist">
-        <li>Local-first data storage on your device</li>
-        <li>Optional Google OAuth only for Drive backup you start</li>
-        <li>No ads and no sale of customer data</li>
-        <li>You can disconnect Google and delete local tokens anytime</li>
-      </ul>
-    </div>
-  </section>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="footer-brand">
+          <img src="logo.svg" alt="" width="22" height="22" />
+          © <span id="y"></span> ERP System
+        </span>
+        <span>
+          <a href="privacy.html">Privacy</a>
+          ·
+          <a href="terms.html">Terms</a>
+        </span>
+      </div>
+    </footer>
+  </div>
 
-  <section id="contact" class="section">
-    <div class="container narrow">
-      <h2>Contact</h2>
-      <p>
-        For support, privacy requests, or business enquiries, email:
-        <a href="mailto:kingofdevilkillr@gmail.com">kingofdevilkillr@gmail.com</a>
-      </p>
-      <p class="muted">Replace the address later if you prefer a business domain mailbox.</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© <span id="y"></span> ERP System. All rights reserved.</span>
-      <span>
-        <a href="privacy.html">Privacy Policy</a>
-        ·
-        <a href="terms.html">Terms of Service</a>
-      </span>
-    </div>
-  </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="main.js"></script>
 </body>
 </html>

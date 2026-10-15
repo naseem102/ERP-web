@@ -1,44 +1,35 @@
 # ERP System — Website
 
-Public website for **ERP System** (desktop business application).
+Premium public site for **ERP System** (desktop business app).
 
 ## Pages
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Landing / product overview |
-| `privacy.html` | Privacy Policy (required for Google OAuth verification) |
+| `index.html` | Landing + intro animation |
+| `privacy.html` | Privacy Policy (Google OAuth) |
 | `terms.html` | Terms of Service |
-| `styles.css` | Shared styling |
+| `logo.svg` | Brand mark (matches blue rounded frame) |
+| `styles.css` / `main.js` | Design + motion |
 
-## Publish (GitHub Pages)
+## Contact
 
-1. Repo **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` / folder `/ (root)`
-4. Save — site will be at:
-   `https://naseem102.github.io/ERP-web/`
+`kingofdevilkillr1@gmail.com`
+
+## GitHub Pages
+
+**Settings → Pages → Deploy from branch → `main` / root**
+
+Site: `https://naseem102.github.io/ERP-web/`
 
 ## Custom domain
 
-In **Settings → Pages → Custom domain**, add your domain and follow DNS instructions (A / CNAME records). After HTTPS is active, use these URLs in Google Cloud OAuth consent:
+Add domain under Pages settings, then use:
 
-- Application home page: `https://YOUR-DOMAIN/`
-- Privacy Policy: `https://YOUR-DOMAIN/privacy.html`
-- Terms of Service: `https://YOUR-DOMAIN/terms.html`
+- Home: `https://YOUR-DOMAIN/`
+- Privacy: `https://YOUR-DOMAIN/privacy.html`
+- Terms: `https://YOUR-DOMAIN/terms.html`
 
-## Google OAuth console fields
+## Optional: exact PNG logo
 
-When the domain is live, fill:
-
-- **App name:** ERP System
-- **User support email:** your Gmail / business email
-- **Application home page:** site root URL
-- **Privacy Policy URL:** `/privacy.html`
-- **Terms of Service URL:** `/terms.html`
-- **Authorized domains:** your domain (without `https://`)
-- **Developer contact:** same support email
-
-## Note
-
-Contact email on the site is currently `kingofdevilkillr@gmail.com`. Change it in `index.html`, `privacy.html`, and `terms.html` if you use a business address.
+If you want the photoreal PNG instead of SVG, upload `logo.png` to this repo root and change `logo.svg` references in HTML to `logo.png`.
