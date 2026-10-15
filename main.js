@@ -1,11 +1,41 @@
 (function () {
+  function shouldShowIntro() {
+    var type = "navigate";
+    try {
+      var nav = performance.getEntriesByType("navigation")[0];
+      if (nav && nav.type) type = nav.type;
+    } catch (e) {}
+
+    // Full reload → show animation
+    if (type === "reload") return true;
+
+    // Browser back/forward → no animation
+    if (type === "back_forward") return false;
+
+    // Internal link from Privacy / Terms / same site → no animation
+    if (document.referrer) {
+      try {
+        var ref = new URL(document.referrer);
+        if (ref.origin === location.origin) return false;
+      } catch (e2) {}
+    }
+
+    // First open or coming from outside → show
+    return true;
+  }
+
   var intro = document.getElementById("intro");
   if (intro) {
-    window.setTimeout(function () {
+    if (shouldShowIntro()) {
+      document.body.style.overflow = "hidden";
+      window.setTimeout(function () {
+        intro.classList.add("hide");
+        document.body.style.overflow = "";
+      }, 2400);
+    } else {
       intro.classList.add("hide");
-      document.body.style.overflow = "";
-    }, 2400);
-    document.body.style.overflow = "hidden";
+      intro.style.display = "none";
+    }
   }
 
   var y = document.getElementById("y");
