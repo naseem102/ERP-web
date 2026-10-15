@@ -78,17 +78,13 @@
   }
 
   function applyConsent(data) {
-    // Necessary always on (consent storage itself)
-    // Preferences: site UI memory (e.g. future theme/lang)
     if (data && data.preferences) {
       document.documentElement.setAttribute("data-prefs", "1");
     } else {
       document.documentElement.removeAttribute("data-prefs");
     }
-    // Analytics: only if accepted — hook for future tools (no third-party loaded by default)
     if (data && data.analytics) {
       document.documentElement.setAttribute("data-analytics", "1");
-      // Example placeholder: window.ERP_ANALYTICS = true;
       window.ERP_ANALYTICS = true;
     } else {
       document.documentElement.removeAttribute("data-analytics");
@@ -99,6 +95,7 @@
   function hideBanner(banner) {
     if (!banner) return;
     banner.classList.add("cookie-hide");
+    banner.classList.remove("cookie-show");
     window.setTimeout(function () {
       if (banner.parentNode) banner.parentNode.removeChild(banner);
     }, 350);
@@ -118,7 +115,7 @@
           '<strong>We use cookies</strong>' +
           '<p>Necessary cookies keep the site working. Optional cookies remember your preferences and help us improve the site if you allow analytics. ' +
           '<a href="privacy.html#cookies">Cookie details</a></p>' +
-          '<div class="cookie-details" id="cookie-details" hidden>' +
+          '<div class="cookie-details" id="cookie-details">' +
             '<label><input type="checkbox" checked disabled /> <span><b>Necessary</b> — store your consent choice</span></label>' +
             '<label><input type="checkbox" id="ck-pref" checked /> <span><b>Preferences</b> — remember UI choices on this device</span></label>' +
             '<label><input type="checkbox" id="ck-analytics" /> <span><b>Analytics</b> — anonymous usage to improve the site (no ads)</span></label>' +
@@ -137,22 +134,27 @@
     });
 
     var details = banner.querySelector("#cookie-details");
-    banner.querySelector("#ck-manage").addEventListener("click", function () {
-      var open = details.hasAttribute("hidden");
-      if (open) details.removeAttribute("hidden");
-      else details.setAttribute("hidden", "");
+    var manageBtn = banner.querySelector("#ck-manage");
+
+    manageBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var open = details.classList.toggle("is-open");
+      manageBtn.textContent = open ? "Hide" : "Manage";
+      manageBtn.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
-    banner.querySelector("#ck-necessary").addEventListener("click", function () {
+    banner.querySelector("#ck-necessary").addEventListener("click", function (e) {
+      e.preventDefault();
       saveConsent({ preferences: false, analytics: false });
       hideBanner(banner);
     });
 
-    banner.querySelector("#ck-accept").addEventListener("click", function () {
+    banner.querySelector("#ck-accept").addEventListener("click", function (e) {
+      e.preventDefault();
+      var detailsOpen = details.classList.contains("is-open");
       var prefEl = banner.querySelector("#ck-pref");
       var anEl = banner.querySelector("#ck-analytics");
-      // Accept all: if details closed, enable both optional; if open, use checkboxes
-      var detailsOpen = !details.hasAttribute("hidden");
       saveConsent({
         preferences: detailsOpen ? prefEl.checked : true,
         analytics: detailsOpen ? anEl.checked : true
@@ -165,7 +167,6 @@
   if (existing) {
     applyConsent(existing);
   } else {
-    // After intro (if any), show banner
     var delay = document.getElementById("intro") && shouldShowIntro() ? 2600 : 400;
     window.setTimeout(showCookieBanner, delay);
   }

@@ -275,11 +275,14 @@ nav a:hover { color: var(--text); }
 }
 .cookie-text a { color: #93c5fd; }
 .cookie-details {
-  display: grid;
+  display: none;
   gap: 0.45rem;
   margin-top: 0.85rem;
   padding-top: 0.75rem;
   border-top: 1px solid var(--line);
+}
+.cookie-details.is-open {
+  display: grid;
 }
 .cookie-details label {
   display: flex;
