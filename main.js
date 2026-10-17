@@ -1,5 +1,6 @@
 (function () {
   var COOKIE_KEY = "erp_cookie_consent";
+  var introDone = false;
 
   function shouldShowIntro() {
     var type = "navigate";
@@ -18,18 +19,34 @@
     return true;
   }
 
+  function closeIntro(intro) {
+    if (!intro || introDone) return;
+    introDone = true;
+    intro.classList.add("hide");
+    document.body.style.overflow = "";
+    window.setTimeout(function () {
+      if (intro.parentNode) intro.style.display = "none";
+      maybeCookies();
+    }, 560);
+  }
+
   var intro = document.getElementById("intro");
+  var showIntro = intro && shouldShowIntro();
   if (intro) {
-    if (shouldShowIntro()) {
+    if (showIntro) {
       document.body.style.overflow = "hidden";
-      window.setTimeout(function () {
-        intro.classList.add("hide");
-        document.body.style.overflow = "";
-      }, 2400);
+      var skip = document.getElementById("intro-skip");
+      var x = document.getElementById("intro-x");
+      if (skip) skip.addEventListener("click", function () { closeIntro(intro); });
+      if (x) x.addEventListener("click", function () { closeIntro(intro); });
+      window.setTimeout(function () { closeIntro(intro); }, 4600);
     } else {
       intro.classList.add("hide");
       intro.style.display = "none";
+      introDone = true;
     }
+  } else {
+    introDone = true;
   }
 
   var y = document.getElementById("y");
@@ -53,7 +70,6 @@
     reveals.forEach(function (el) { el.classList.add("show"); });
   }
 
-  /* ===== Cookie consent ===== */
   function readConsent() {
     try {
       var raw = localStorage.getItem(COOKIE_KEY);
@@ -163,11 +179,14 @@
     });
   }
 
-  var existing = readConsent();
-  if (existing) {
-    applyConsent(existing);
-  } else {
-    var delay = document.getElementById("intro") && shouldShowIntro() ? 2600 : 400;
-    window.setTimeout(showCookieBanner, delay);
+  function maybeCookies() {
+    var existing = readConsent();
+    if (existing) {
+      applyConsent(existing);
+      return;
+    }
+    showCookieBanner();
   }
+
+  if (introDone) maybeCookies();
 })();

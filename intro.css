@@ -1,0 +1,166 @@
+/* Full-screen intro — same idea as the APK Hub open */
+.stage {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: #05070f;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: #f8fafc;
+  transition: opacity 0.55s ease, visibility 0.55s;
+}
+.stage.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.stage-grid {
+  position: absolute;
+  inset: -40px;
+  background-image:
+    linear-gradient(rgba(96, 165, 250, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  animation: grid-drift 14s linear infinite;
+}
+.stage-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+.stage-orb.a {
+  width: 420px; height: 420px;
+  left: -80px; top: -40px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.55), transparent 70%);
+  animation: orb-a 8s ease-in-out infinite;
+}
+.stage-orb.b {
+  width: 380px; height: 380px;
+  right: -60px; bottom: -40px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+  animation: orb-b 9s ease-in-out infinite;
+}
+.stage-x {
+  position: absolute;
+  top: 18px; right: 18px;
+  z-index: 3;
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.55);
+  color: #e2e8f0;
+  font-size: 22px;
+  cursor: pointer;
+}
+.stage-x:hover { background: rgba(30, 41, 59, 0.9); }
+
+.floater {
+  position: absolute;
+  z-index: 2;
+  width: 58px; height: 58px;
+  border-radius: 16px;
+  display: grid; place-items: center;
+  font-size: 24px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(96, 165, 250, 0.28);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  animation: float-ico 5.5s ease-in-out infinite;
+}
+.floater.f1 { left: 8%; top: 28%; animation-delay: 0s; }
+.floater.f2 { left: 14%; bottom: 22%; animation-delay: -1.2s; }
+.floater.f3 { right: 10%; top: 24%; animation-delay: -0.6s; }
+.floater.f4 { right: 16%; bottom: 20%; animation-delay: -2s; }
+.floater.f5 { left: 46%; top: 12%; animation-delay: -0.4s; width: 52px; height: 52px; }
+
+.stage-center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1rem;
+}
+.stage-kicker {
+  margin: 0 0 1.1rem;
+  letter-spacing: 0.42em;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  animation: rise 0.7s 0.15s both;
+}
+.stage-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  animation: pop 0.7s 0.35s both;
+}
+.stage-brand img {
+  width: 84px; height: 84px;
+  filter: drop-shadow(0 0 22px rgba(37, 99, 235, 0.85));
+}
+.stage-brand span {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #ffffff, #93c5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 0 18px rgba(59, 130, 246, 0.35));
+}
+.stage-tag {
+  margin: 1.15rem 0 0;
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  animation: rise 0.7s 0.7s both;
+}
+.stage-skip {
+  position: absolute;
+  z-index: 3;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.55);
+  color: #e2e8f0;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.stage-skip:hover { background: rgba(30, 41, 59, 0.95); }
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 64px 64px, 64px 64px; }
+}
+@keyframes orb-a {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 24px); }
+}
+@keyframes orb-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-24px, -20px); }
+}
+@keyframes float-ico {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.86); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 720px) {
+  .floater { display: none; }
+  .floater.f5 { display: grid; }
+  .stage-brand img { width: 64px; height: 64px; }
+}
