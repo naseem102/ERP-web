@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ERP System — Professional Business Workspace</title>
-  <meta name="description" content="ERP System is a professional desktop business application for invoices, delivery challans, material receipts, reports, and secure backups." />
+  <meta name="description" content="ERP System is a professional Windows desktop ERP for purchase orders, material receipts, delivery challans, invoices, banks, ledgers, inventory, reports, and secure local backups." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="intro.css" />
   <link rel="icon" href="logo.svg" type="image/svg+xml" />
@@ -28,7 +28,7 @@
         <img src="logo.svg" alt="" width="84" height="84" />
         <span>ERP System</span>
       </div>
-      <p class="stage-tag">INVOICES · DELIVERY · ACCOUNTS</p>
+      <p class="stage-tag">INVOICES · DELIVERY · BANKS · ACCOUNTS</p>
     </div>
 
     <button type="button" class="stage-skip" id="intro-skip">Skip Intro →</button>
@@ -61,10 +61,11 @@
       <div class="container hero-grid">
         <div class="reveal">
           <p class="eyebrow"><span class="pulse-dot"></span> Desktop ERP for growing businesses</p>
-          <h1>Run invoices, delivery &amp; accounts in one <span class="gradient-text">professional workspace</span></h1>
+          <h1>Run purchase, stock, delivery, invoices & banks in one <span class="gradient-text">professional workspace</span></h1>
           <p class="lead">
-            Manage material receipts, delivery challans, invoices, payments, financial years,
-            and local or cloud backups — built for Windows PCs in shops, warehouses, and offices.
+            Full Windows desktop ERP: suppliers, customers, inventory, purchase orders, material receipts,
+            delivery challans, invoices with DC reference, cash/bank receipts & payments, multi-bank book,
+            party ledgers, reports, financial year, and local or optional Google Drive backup.
           </p>
           <div class="hero-actions">
             <a class="btn" href="download.html">Download for Windows</a>
@@ -76,11 +77,12 @@
             <img src="logo.svg" alt="ERP" class="hero-logo spin-soft" width="88" height="88" />
             <h3>What you get</h3>
             <ul>
-              <li>Invoices &amp; payments</li>
-              <li>Delivery challans + driver details</li>
-              <li>Material receipts &amp; reports</li>
-              <li>Pakistan financial year</li>
-              <li>Local + optional Google Drive backup</li>
+              <li>PO · MRN · DC · Invoice + PDF</li>
+              <li>Stock in on MRN, out on DC</li>
+              <li>Banks, transfers & bank book</li>
+              <li>Customer & supplier ledgers</li>
+              <li>License-locked company settings</li>
+              <li>Local DB + optional Drive backup</li>
             </ul>
           </div>
         </div>
@@ -94,26 +96,67 @@
           <p class="section-lead">Everything your team needs for day-to-day operations — clear, fast, focused.</p>
         </div>
         <div class="cards">
-          <article class="card reveal"><div class="card-icon">📄</div><h3>Sales &amp; documents</h3><p>Invoices, delivery challans, and material receipts with print-ready layouts.</p></article>
-          <article class="card reveal delay-1"><div class="card-icon">💳</div><h3>Payments</h3><p>Track invoice payments and receipts so balances stay accurate all year.</p></article>
-          <article class="card reveal delay-2"><div class="card-icon">👥</div><h3>Masters &amp; parties</h3><p>Parties, items, and company settings in one place for faster entry.</p></article>
-          <article class="card reveal"><div class="card-icon">📊</div><h3>Reports</h3><p>Operational reports when you need a clear snapshot of activity.</p></article>
-          <article class="card reveal delay-1"><div class="card-icon">📅</div><h3>Financial year</h3><p>Aligned with Pakistan’s July–June year so periods match your books.</p></article>
-          <article class="card reveal delay-2"><div class="card-icon">☁️</div><h3>Backup</h3><p>Local backups anytime. Optional Google Drive after you connect.</p></article>
+          <article class="card reveal">
+            <div class="card-icon">🏢</div>
+            <h3>Company & year</h3>
+            <p>Company profile, prefixes, tax %. First save free; later edits need password + license. Pakistan July–June financial year.</p>
+          </article>
+          <article class="card reveal delay-1">
+            <div class="card-icon">👥</div>
+            <h3>Parties & inventory</h3>
+            <p>Customers & suppliers with phone, address, city, province, NTN. Items with unit, typed category, and live stock.</p>
+          </article>
+          <article class="card reveal delay-2">
+            <div class="card-icon">📦</div>
+            <h3>Purchase flow</h3>
+            <p>Purchase orders and material receipts. Stock increases only on MRN. Print-ready PDFs with party details.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">🚚</div>
+            <h3>Delivery & sales</h3>
+            <p>Delivery challans (KG, driver name/phone) and invoices with DC reference, PO number/date, tax, and auto party block on PDF.</p>
+          </article>
+          <article class="card reveal delay-1">
+            <div class="card-icon">💳</div>
+            <h3>Receipts & payments</h3>
+            <p>Cash or bank receipts linked to customers; payments linked to suppliers. Cheque details and our bank account selection.</p>
+          </article>
+          <article class="card reveal delay-2">
+            <div class="card-icon">🏦</div>
+            <h3>Banks</h3>
+            <p>Multiple bank accounts, opening balance, bank book, inter-bank transfer, and bank book PDF.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">📊</div>
+            <h3>Reports & ledgers</h3>
+            <p>Stock, sales, purchase, vouchers, plus customer ledger and supplier ledger with PDF export — all under Reports.</p>
+          </article>
+          <article class="card reveal delay-1">
+            <div class="card-icon">📒</div>
+            <h3>Opening balances</h3>
+            <p>Opening balances for parties, inventory, and banks so your books start clean for the year.</p>
+          </article>
+          <article class="card reveal delay-2">
+            <div class="card-icon">☁️</div>
+            <h3>Backup & security</h3>
+            <p>Local SQLite on your PC. Optional Google Drive backup. Login, change password, and license-protected settings.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="security" class="section section-alt">
       <div class="container narrow reveal">
-        <h2>Security &amp; your data</h2>
+        <h2>Security & your data</h2>
         <p>
-          Data lives primarily on <strong>your computer</strong>. Optional Google Drive backup runs only after you
-          sign in and choose to upload. We do not sell your data.
+          Data lives primarily on <strong>your computer</strong> in a local database. Optional Google Drive backup runs only after you
+          sign in and choose to upload. Company settings lock after first save until unlocked with account password and license key.
+          We do not sell your data.
         </p>
         <ul class="checklist">
-          <li>Local-first storage on your device</li>
+          <li>Local-first storage on your device (SQLite)</li>
           <li>Google OAuth only for backups you start</li>
+          <li>Password + license unlock for company settings</li>
           <li>No ads · no sale of customer data</li>
           <li>Disconnect Google and remove local tokens anytime</li>
         </ul>
