@@ -27,7 +27,7 @@
     window.setTimeout(function () {
       if (intro.parentNode) intro.style.display = "none";
       maybeCookies();
-    }, 560);
+    }, 700);
   }
 
   var intro = document.getElementById("intro");
@@ -35,11 +35,8 @@
   if (intro) {
     if (showIntro) {
       document.body.style.overflow = "hidden";
-      var skip = document.getElementById("intro-skip");
-      var x = document.getElementById("intro-x");
-      if (skip) skip.addEventListener("click", function () { closeIntro(intro); });
-      if (x) x.addEventListener("click", function () { closeIntro(intro); });
-      window.setTimeout(function () { closeIntro(intro); }, 4600);
+      // Original premium intro: float logo + ring + bar, then fade (~2.4s)
+      window.setTimeout(function () { closeIntro(intro); }, 2400);
     } else {
       intro.classList.add("hide");
       intro.style.display = "none";
