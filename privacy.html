@@ -25,7 +25,7 @@
 
   <main class="legal container">
     <h1>Privacy Policy</h1>
-    <p class="muted">Last updated: 15 October 2026</p>
+    <p class="muted">Last updated: 23 October 2026</p>
 
     <p>
       This Privacy Policy describes how <strong>ERP System</strong> (“the Application”, “we”, “us”)
@@ -37,23 +37,40 @@
 
     <h2>1. Who we are</h2>
     <p>
-      ERP System is a Windows desktop application for business operations such as invoices,
-      delivery challans, material receipts, payments, reports, and backups.
+      ERP System is a Windows desktop application for business operations including company settings,
+      financial years, customers, suppliers, inventory, purchase orders, material receipts,
+      delivery challans, invoices, cash/bank receipts and payments, multi-bank accounts and bank book,
+      opening balances, chart of accounts, reports, customer and supplier ledgers, and local or optional cloud backup.
       Contact: <a href="mailto:kingofdevilkillr1@gmail.com">kingofdevilkillr1@gmail.com</a>
     </p>
 
     <h2>2. Information we process</h2>
     <h3>2.1 Business data you enter</h3>
     <p>
-      The Application stores data you enter (parties, items, documents, payments, etc.)
-      in a local database on your device. This data stays under your control unless you
-      export or back it up elsewhere.
+      The Application stores data you enter in a <strong>local SQLite database on your device</strong>.
+      Depending on the modules you use, this may include:
+    </p>
+    <ul>
+      <li>Company name, address, phone, email, NTN, STRN, currency, tax %, document prefixes</li>
+      <li>Customer and supplier records (code, name, phone, address, city, province, NTN, opening balance)</li>
+      <li>Inventory items (code, name, unit, category, stock levels)</li>
+      <li>Purchase orders, material receipts, delivery challans (including driver name/phone), invoices (including DC reference and PO fields)</li>
+      <li>Receipts and payments (party, amount, cheque details, linked bank account)</li>
+      <li>Bank accounts (name, branch, account number, IBAN, opening balance) and bank transfers</li>
+      <li>Opening balances, chart of accounts, and report/ledger outputs you generate</li>
+      <li>PDF files you save for documents or reports</li>
+    </ul>
+    <p>
+      This data stays under your control on your computer unless you export it, print it, or back it up elsewhere
+      (for example optional Google Drive backup).
     </p>
 
-    <h3>2.2 Application login</h3>
+    <h3>2.2 Application login and license</h3>
     <p>
-      Usernames and passwords for the Application are stored locally for access control.
-      We do not operate a public cloud signup system on this website.
+      Usernames, password hashes, and license-related values used for Application access and for unlocking
+      company settings after the first save are stored <strong>locally</strong> for access control.
+      We do not operate a public cloud signup system on this website. Default install credentials should be
+      changed on first use.
     </p>
 
     <h3>2.3 Optional Google account (Google Drive backup)</h3>
@@ -79,33 +96,29 @@
     <p>We use a small number of cookies / local storage items so the site can respect your choices:</p>
     <ul>
       <li><strong>Necessary</strong> — stores your cookie consent decision so we do not ask on every visit.</li>
-      <li><strong>Preferences</strong> (optional) — may remember simple UI choices on this device (for example future language or display preferences).</li>
+      <li><strong>Preferences</strong> (optional) — may remember simple UI choices on this device.</li>
       <li>
-        <strong>Analytics</strong> (optional) — this category is reserved for anonymous usage measurement
-        <em>only if you accept it</em>.
-        <strong>At present we do not load any third-party analytics tool</strong>
-        (for example we are <em>not</em> using Google Analytics, Cloudflare Analytics, Meta Pixel, or similar).
-        Accepting this option only stores your permission so that, if we add a privacy-friendly analytics tool later,
-        we can enable it for users who opted in. If we introduce a specific tool, we will name it in this policy
-        and only run it for visitors who have accepted Analytics.
+        <strong>Analytics</strong> (optional) — reserved for anonymous usage measurement <em>only if you accept it</em>.
+        <strong>At present we do not load any third-party analytics tool</strong>.
         No advertising cookies. No sale of data.
       </li>
     </ul>
     <p>
-      You can choose <strong>Accept all</strong>, <strong>Necessary only</strong>, or open <strong>Manage</strong> to toggle optional categories.
+      You can choose <strong>Accept all</strong>, <strong>Necessary only</strong>, or open <strong>Manage</strong>.
       To change your choice later, clear site data for this domain in your browser and reload the page.
     </p>
 
     <h2>4. How we use information</h2>
     <ul>
-      <li>To run Application features you use (documents, reports, local storage).</li>
+      <li>To run Application features you use (masters, documents, stock, banks, ledgers, reports, local storage).</li>
+      <li>To enforce local login and optional company-settings unlock (password + license).</li>
       <li>To perform optional backups you explicitly start.</li>
       <li>To respond to support or privacy emails you send.</li>
       <li>To improve reliability and security of the software and website.</li>
     </ul>
 
     <h2>5. Sharing</h2>
-    <p>We do not sell your personal information. Limited sharing may occur with:</p>
+    <p>We do not sell your personal or business information. Limited sharing may occur with:</p>
     <ul>
       <li><strong>Google</strong> — only if you connect Drive, under Google’s terms and scopes you approve.</li>
       <li><strong>Hosting providers</strong> — as needed to operate this website.</li>
@@ -122,7 +135,8 @@
     <h2>7. Security</h2>
     <p>
       The Application is local-first and requests cloud access only for optional backup.
-      Protect your device with OS updates and strong account passwords.
+      Company settings can be locked after first save. Protect your device with OS updates and strong passwords.
+      You are responsible for controlling who can log in on shared PCs.
     </p>
 
     <h2>8. Your choices</h2>
@@ -130,6 +144,7 @@
       <li>Use the Application without connecting Google Drive.</li>
       <li>Disconnect Google from the Backup screen to remove local tokens.</li>
       <li>Delete backup files from your own Google Drive.</li>
+      <li>Change the admin password and keep your license key private.</li>
       <li>Control website cookies via the consent banner.</li>
       <li>Email privacy questions to the address below.</li>
     </ul>
